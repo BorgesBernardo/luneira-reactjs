@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
+
+.navbar-container{
+  background-color: #e0cfc7;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 12.5rem;
+  .logo-container img{
+    width: 7rem;
+    margin: 1.875rem;
+  }
+  .menu-cart{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2.5rem;
+    margin-right: 1.25rem;
+    .menu-container{
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      font-size: 1.5rem;
+      font-family: "Roboto Serif", serif;
+    }
+  }
+
+}
+
+
