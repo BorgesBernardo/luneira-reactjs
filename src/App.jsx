@@ -1,19 +1,18 @@
-import NavBar from './components/Header/NavBar'
-import ItemListContainer from './components/ItemListContainer'
+import AppRouter from './Router/AppRouter'
 import './App.css'
-
 
 
 function App() {
 
+  // const addToCart = (contador) =>{
+  //   console.log(contador)
+  // }
+
 
   return (
-    
-    <div> 
-      <NavBar />
-      <ItemListContainer saludo = "Bienvenidos a Lu Neira Centro de Estética" mensaje =" Proximamente el sitio que estabas esperando"/>
-    </div>
 
+
+    <AppRouter/>
 
   )
 }
