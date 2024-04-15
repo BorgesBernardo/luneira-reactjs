@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import getProducts from '../../Data/getProducts'
-import ItemList from './ItemList';
-import { useParams } from 'react-router-dom';
+import ItemList from './ItemList'
+import { useParams } from 'react-router-dom'
 import "./itemListContainer.scss"
+import React from 'react'
 
 const ItemListContainer = ( {saludo} ) => {
 
   const [products, setProducts] = useState([]);
 
-  const {idCategory} = useParams();
+  const { idCategory } = useParams();
 
 useEffect(() => {
   

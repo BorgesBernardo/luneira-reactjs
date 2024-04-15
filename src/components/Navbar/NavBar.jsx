@@ -11,7 +11,7 @@ const NavBar = () => {
       <div className='logo-container'>
         
         <Link to="/">
-          <img src="img/logo-ln.png" alt="luneiranails" />
+          <img src="/img/logo-ln.png" alt="luneiranails" />
         </Link>
         
 

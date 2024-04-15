@@ -13,20 +13,23 @@ const ItemDetailContainer = () => {
   useEffect(() => {
 
     getProducts
-      .then((respuesta)=>{
+      .then((respuesta) => {
 
-        const newProduct = respuesta.find((product)=> product.id === idProduct)
+        const newProduct = respuesta.find((product)=> product.id === idProduct);
         setProduct(newProduct)
-
+        
       })
       .catch((error) => console.log(error))
+      .finally(()=> console.log("Finalizo la promesa"));
 
-  },[])
+  },[idProduct])
 
   return (
 
   <div>
-    <ItemDetail product = {product}/>
+
+    <ItemDetail product = {product} />
+
   </div>
 
   )

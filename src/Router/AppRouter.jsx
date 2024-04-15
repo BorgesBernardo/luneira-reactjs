@@ -18,8 +18,8 @@ const AppRouter = () => {
       
       {/* Routes va a envolver los componentes que tenga una ruta específica */}
         <Route path="/" element={ <ItemListContainer saludo = "Bienvenidos a Lu Neira" /> } />
-        <Route path="/category/:idCategory" element={ <ItemListContainer />} />
-        <Route path="/detail/:idProduct" element={ <ItemDetailContainer />} />
+        <Route path="/category/:idCategory" element={ <ItemListContainer /> } />
+        <Route path="/detail/:idProduct" element={ <ItemDetailContainer /> } />
     
       </Routes>
       

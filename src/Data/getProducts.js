@@ -9,7 +9,7 @@ const productos =[
     category: "mascaras",
     stock: 2,
     price: "$1.500",
-    image:'./img/items/antiage-mask.png'
+    image:'/img/items/antiage-mask.png'
   },
   {
     id: "lnbodyreic452",
@@ -18,7 +18,7 @@ const productos =[
     category:"cremas",
     stock: 4,
     price: "$2.000",
-    image:'./img/items/crema-corporal-proretic.png'
+    image:'/img/items/crema-corporal-proretic.png'
   },
   {
     id: "lnvitaminc987",
@@ -27,7 +27,7 @@ const productos =[
     category: "cremas",
     stock: 2,
     price: "$3.000",
-    image:'./img/items/crema-exfoliante-antiage.png'
+    image:'/img/items/crema-exfoliante-antiage.png'
   },
   {
     id: "lnprovlift574",
@@ -36,7 +36,7 @@ const productos =[
     category: "cremas",
     stock: 2,
     price: "$3.000",
-    image:'./img/items/crema-gel-liftingcorporal.png'
+    image:'/img/items/crema-gel-liftingcorporal.png'
   },
   {
     id: "lnstressoutcream124",
@@ -45,7 +45,7 @@ const productos =[
     category: "cremas",
     stock: 2,
     price: "$3.000",
-    image:'./img/items/crema-hidratante-knb.png'
+    image:'/img/items/crema-hidratante-knb.png'
   },
   {
     id: "lncellucontrol456",
@@ -54,7 +54,7 @@ const productos =[
     category: "cremas",
     stock: 2,
     price: "$3.000",
-    image:'./img/items/crema-modeladora.png'
+    image:'/img/items/crema-modeladora.png'
   },
   {
     id: "lnvitamincboby&hans364",
@@ -63,7 +63,7 @@ const productos =[
     category: "cremas",
     stock: 2,
     price: "$3.000",
-    image:'./img/items/crema-reparadora-manos.png'
+    image:'/img/items/crema-reparadora-manos.png'
   },
   {
     id: "lngoldenmask657",
@@ -72,7 +72,7 @@ const productos =[
     category: "mascaras",
     stock: 2,
     price: "$3.000",
-    image:'./img/items/gold-mask.png'
+    image:'/img/items/gold-mask.png'
   },
   {
     id: "lnmicroexfoliant357",
@@ -81,7 +81,7 @@ const productos =[
     category: "lociones",
     stock: 2,
     price: "$3.000",
-    image:'./img/items/limpiador-microexfoliante.png'
+    image:'/img/items/limpiador-microexfoliante.png'
   },
   {
     id: "lnhyaluronicb5lotion687",
@@ -90,7 +90,7 @@ const productos =[
     category: "lociones",
     stock: 2,
     price: "$3.000",
-    image:'./img/items/locion-osmoprotectora.png'
+    image:'/img/items/locion-osmoprotectora.png'
   },
   {
     id: "lnscrubproretic487",
@@ -99,7 +99,7 @@ const productos =[
     category: "scrub",
     stock: 2,
     price: "$3.000",
-    image:'./img/items/scrub-facial-proretic.png'
+    image:'/img/items/scrub-facial-proretic.png'
   },
   {
     id: "lnalpinerosesglowpearlsserum879",
@@ -108,7 +108,7 @@ const productos =[
     category: "serum",
     stock: 2,
     price: "$3.000",
-    image:'./img/items/serum-alpineroses.png'
+    image:'/img/items/serum-alpineroses.png'
   },
   {
     id: "lnserumferulic987",
@@ -117,7 +117,7 @@ const productos =[
     category: "serum",
     stock: 2,
     price: "$3.000",
-    image:'./img/items/serum-antioxidante.png'
+    image:'/img/items/serum-antioxidante.png'
   },
   {
     id: "lnserumcbd984",
@@ -126,7 +126,7 @@ const productos =[
     category: "serum",
     stock: 2,
     price: "$3.000",
-    image:'./img/items/serum-facialcbd.png'
+    image:'/img/items/serum-facialcbd.png'
   },
   {
     id: "lnserumproretic&vc649",
@@ -135,7 +135,7 @@ const productos =[
     category: "serum",
     stock: 2,
     price: "$3.000",
-    image:'./img/items/serum-retinol.png'
+    image:'/img/items/serum-retinol.png'
   },
   {
     id: "lnhyakuronicmask",
@@ -144,7 +144,7 @@ const productos =[
     category: "mascaras",
     stock: 2,
     price: "$3.000",
-    image:'./img/items/hyaluronic-mask.png'
+    image:'/img/items/hyaluronic-mask.png'
   },
   {
     id: "lncbdtoner364",
@@ -153,7 +153,7 @@ const productos =[
     category: "lociones",
     stock: 2,
     price: "$3.000",
-    image:'./img/items/tonico-facialcbd.png'
+    image:'/img/items/tonico-facialcbd.png'
   },
 ]
 
