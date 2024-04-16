@@ -1,6 +1,6 @@
 // Array de productos y promesa
 
-const productos =[
+export const productos =[
 
   {
     id: "lnmascaras789",
@@ -163,7 +163,7 @@ const getProducts = new Promise((resolve,reject) => {
 
   setTimeout(() =>{
     resolve(productos);
-  }, 2000);
+  }, 3000);
 }
 );
 export default getProducts

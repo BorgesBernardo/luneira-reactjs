@@ -3,16 +3,20 @@ import getProducts from '../../Data/getProducts'
 import ItemList from './ItemList'
 import { useParams } from 'react-router-dom'
 import "./itemListContainer.scss"
+import {PropagateLoader} from "react-spinners"
 import React from 'react'
 
 const ItemListContainer = ( {saludo} ) => {
 
   const [products, setProducts] = useState([]);
-
+  const [loading, setLoading] = useState(false);
   const { idCategory } = useParams();
 
 useEffect(() => {
   
+  // muestra la pantalla de cargando
+  setLoading(true)
+
   getProducts
     .then((respuesta)=>{
       
@@ -27,7 +31,7 @@ useEffect(() => {
       }
     })
     .catch((error)=>console.log(error))
-    .finally(()=> console.log("Finalizo la promesa"));
+    .finally(()=> setLoading(false));
 
 },[idCategory])
   
@@ -35,16 +39,14 @@ useEffect(() => {
     <div>
 
       <div className='saludo'>
-
         <h1>{saludo}</h1>
-
       </div>
 
       <div className='container-list'>
-
-        <ItemList products = {products} />
-        
-      </div>
+        {
+          loading ? <div className='spinner'> <PropagateLoader color="#baaaa2" /> </div> : <ItemList products = {products} /> 
+        }
+        </div>
     </div>
 
 

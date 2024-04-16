@@ -5,24 +5,26 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 10px;
-  width: 250px;
-  height: 550px;
+  gap: 15px;
+  width: 420px;
+  height: 800px;
   box-shadow: 0px 0px 10px grey;
-  padding: 10px 10px;
+  padding: 10px 20px;
   border-radius: 15px;
   margin-bottom: 20px;
+  font-size: 22px;
+  .button-detail{
+    list-style: none;
+    text-decoration: none;
+    color:black;
+    font-weight: bold;
+    font-family: "Roboto Serif", serif;
+    background-color: #e0cfc7;
+    padding: 10px 10px 10px 14px;
+    width: 120px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
 }
 
-.button-detail{
-  list-style: none;
-  text-decoration: none;
-  color:black;
-  font-weight: bold;
-  font-family: "Roboto Serif", serif;
-  background-color: #e0cfc7;
-  padding: 10px 10px 10px 14px;
-  width: 95px;
-  border-radius: 10px;
-  margin-bottom: 10px;
-}
+
