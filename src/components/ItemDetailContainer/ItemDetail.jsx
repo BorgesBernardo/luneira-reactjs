@@ -1,35 +1,57 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useEffect, useState } from 'react'
-import getProducts from '../../Data/getProducts'
 import { useParams } from 'react-router-dom'
-import { Link } from 'react-router-dom'
 import "./itemDetail.scss"
+import CountController from '../Count-Controller/CountController';
+import { CartContext } from '../../context/CartContext';
+import {doc, getDoc} from "firebase/firestore";
+import db from "../../db/db";
+
+
 
 const ItemDetail = ({}) => {
 
   const [product, setProduct] = useState({})
 
-  const { idProduct, idCategory } = useParams()
+  const { idProduct } = useParams()
 
-    useEffect(() => {
+  const getProducts = async() => {
+    const docRef = doc(db, "products", idProduct);
+    const dataDb = await getDoc (docRef)
 
-      getProducts
-        .then((respuesta) => {
-          const newProduct = respuesta.find((product)=> product.id === idProduct);
-          setProduct(newProduct)
-        
-        })
-        .catch((error) => console.log(error))
-        .finally(()=> console.log("Finalizo la promesa"));
-    },[idProduct])
+    const data = {id: dataDb.id, ...dataDb.data()}
+
+    setProduct(data)
+  }
+
+  const { cart, addToCart } = useContext(CartContext)
+
+
+  const handleAddToCart = (contador) => {
+
+    const productCart = {...product, quantity: contador} // este va a ser el producto que agregemos al carrito
+    addToCart(productCart)
+  }
+
+  useEffect(() => {
+
+    getProducts()
+
+  },[idProduct])
 
   return (
 
-    <div className='product-card-detail'>
-      <img src={product.image} alt={product.name} className='image-tem'/>
+    <div className='productCardContainer'>
+      <div>
+        <img src={product.image} alt={product.name} className='image-tem'/>
+      </div>
+      <div className='productItemDetail'>
         <h2> {product.name} </h2>
         <p> {product.description} </p>
-        <h3> {product.price} </h3> 
+        <h3> {product.price} </h3>
+        <CountController handleAddToCart={handleAddToCart} stock={product.stock}/>
+      </div>
+
     </div>
   )
 }

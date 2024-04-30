@@ -1,8 +1,10 @@
+import React from 'react'
 import{ BrowserRouter, Routes,Route } from "react-router-dom"
 import NavBar from "../components/Navbar/NavBar"
 import ItemListContainer from "../components/ItemListContainer/ItemListContainer"
 import ItemDetailContainer from "../components/ItemDetailContainer/ItemDetail"
-import React from 'react'
+import { CartProvider } from "../context/CartContext"
+import Cart from "../components/cart/Cart"
 
 
 const AppRouter = () => {
@@ -12,21 +14,26 @@ const AppRouter = () => {
       
     <BrowserRouter>
 
-      <NavBar />  
+      <CartProvider>
+
+        <NavBar />  
+
+        <Routes>
       
-      <Routes>
-      
-      {/* Routes va a envolver los componentes que tenga una ruta específica */}
-        <Route path="/" element={ <ItemListContainer saludo = "Bienvenidos a Lu Neira" /> } />
-        <Route path="/category/:idCategory" element={ <ItemListContainer /> } />
-        <Route path="/detail/:idProduct" element={ <ItemDetailContainer /> } />
-    
-      </Routes>
+          <Route path="/" element={ <ItemListContainer saludo = "Bienvenidos a Lu Neira" /> } />
+
+          <Route path="/category/:idCategory" element={ <ItemListContainer /> } />
+
+          <Route path="/detail/:idProduct" element={ <ItemDetailContainer /> } />
+
+          <Route path ="/cart" element = {<Cart />} />
+  
+        </Routes>
+
+      </CartProvider>
       
     </BrowserRouter>
       
-
-
 
   </>
   )

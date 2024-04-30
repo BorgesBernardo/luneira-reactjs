@@ -2,37 +2,35 @@ import React from 'react'
 import { useState } from 'react';
 import "./countController.scss";
 
-const CountController = ({addToCart}) => {
+const CountController = ({handleAddToCart, stock}) => {
 
   const [ contador, setContador ] = useState(1);
 
-  const sumar = () =>{
-
-  setContador(contador + 1);
-
+  const handleAdd = () =>{
+    if(contador < stock){
+      setContador(contador + 1);
+    }
   }
 
-  const restar = () =>{
+  const handleSubtract = () =>{
     
     if (contador > 1 ) {
       setContador(contador - 1)
     } else 
-      alert("No se puede Restar Más");
+      alert("La cantidad no puede ser menor a 1");
   }
 
   return (
-    <div className='container-controller'>
-    <div className='container-contador'>
-      <button onClick={restar} className='boton-operacion'> - </button>
-      <p> Cantidad:{contador} </p>
-      <button onClick={sumar} className='boton-operacion'> + </button>
+    <div className='controlerContainer'>
+      <div className='countContainer'>
+        <button onClick={handleSubtract} className='operationButton'> - </button>
+        <p> Cantidad:{contador} </p>
+        <button onClick={handleAdd} className='operationButton'> + </button>
+      </div>
+      <div>
+        <button onClick={() => handleAddToCart (contador)} className='cartButton'> Agregar al Carrito</button>
+      </div>
     </div>
-    <div>
-      <button onClick={() => addToCart (contador)}> Agregar al Carrito</button>
-    </div>
-
-  </div>
-
   );
 };
 

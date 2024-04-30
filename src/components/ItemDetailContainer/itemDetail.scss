@@ -1,9 +1,14 @@
-.product-card-detail{
+.productCardContainer{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 20px;
-  width: 30%;
-  margin-left: 30px;
+  width: 100%;
   font-size: 30px;
-  margin-bottom: 50px;
+  margin: 30px 30px;
+  .productItemDetail{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    justify-content: center;
+  }
 }

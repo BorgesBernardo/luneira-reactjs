@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
-import getProducts from '../../Data/getProducts'
 import ItemList from './ItemList'
 import { useParams } from 'react-router-dom'
 import "./itemListContainer.scss"
 import {PropagateLoader} from "react-spinners"
+import { collection, getDocs, query, where } from "firebase/firestore";
+import db from "../../db/db"
 import React from 'react'
 
 const ItemListContainer = ( {saludo} ) => {
@@ -12,39 +13,45 @@ const ItemListContainer = ( {saludo} ) => {
   const [loading, setLoading] = useState(false);
   const { idCategory } = useParams();
 
+  const getProducts = async () =>{
+
+    const dataDb = await getDocs(collection(db, "products"));
+    
+    const data = dataDb.docs.map( (productDb) => {
+      return {id: productDb.id, ...productDb.data()}
+    })
+
+    setProducts(data)
+  }
+
+  const getProducstByCategory = async () =>{
+    const q = query(collection(db, "products"), where("category", "==", idCategory));
+    
+    const dataDb = await getDocs(q);
+    
+    const data = dataDb.docs.map( (productDb) => {
+      return {id: productDb.id, ...productDb.data()}
+    })
+
+    setProducts(data)
+  }
+
 useEffect(() => {
   
-  // muestra la pantalla de cargando
-  setLoading(true)
-
-  getProducts
-    .then((respuesta)=>{
-      
-      if (idCategory){
-        // filtra los productos
-        const newProducts = respuesta.filter( (product)=> product.category === idCategory );
-        setProducts(newProducts);
-        
-      }else{
-        // devolver todos los productos
-        setProducts(respuesta)
-      }
-    })
-    .catch((error)=>console.log(error))
-    .finally(()=> setLoading(false));
+  if(idCategory){
+    getProducstByCategory()
+  }else {
+    getProducts()
+  }
 
 },[idCategory])
   
   return (
     <div>
 
-      <div className='saludo'>
-        <h1>{saludo}</h1>
-      </div>
-
       <div className='container-list'>
         {
-          loading ? <div className='spinner'> <PropagateLoader color="#baaaa2" /> </div> : <ItemList products = {products} /> 
+          loading ? <div className='spinner'> <PropagateLoader color="#baaaa2" /> </div> : <ItemList products = {products} saludo = {saludo}/> 
         }
         </div>
     </div>
@@ -52,5 +59,6 @@ useEffect(() => {
 
   );
 };
+
 
 export default ItemListContainer
