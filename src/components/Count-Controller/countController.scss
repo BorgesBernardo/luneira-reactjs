@@ -1,17 +1,17 @@
 .controlerContainer{
   display: flex;
   flex-direction: row;
-  gap: 30px;
+  gap: 1.875rem;
   .countContainer{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 1.25rem;
     .operationButton{
-      padding: 10px 20px;
+      padding: .625rem 1.25rem;
       background-color: transparent;
-      border: 2px solid #e0cfc7;
+      border: .125rem solid #e0cfc7;
       border-radius: 5px;
       cursor: pointer;
     }
@@ -19,12 +19,12 @@
   .cartButton{
       text-decoration: none;
       background-color: #e0cfc7;
-      padding: 20px;
-      width: 200px;
-      border-radius: 10px;
+      padding: 1.25rem;
+      width: 14rem;
+      border-radius: .625rem;
       color: #626161;
       font-weight: bold;
-      font-size: 18px;
+      font-size: 1.125rem;
       border-color: transparent;
       cursor: pointer;
   }

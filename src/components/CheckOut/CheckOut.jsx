@@ -1,11 +1,19 @@
 import React from 'react'
 import { useState, useContext } from 'react'
-import FormCheckOut from './FormCheckOut'
-import { CartContext } from '../../context/CartContext'
-import { addDoc, collection, setDoc, doc } from "firebase/firestore"
-import db from "../../db/db"
+
+import {toast} from "react-toastify"
 import { Link } from 'react-router-dom'
+
+import { CartContext } from '../../context/CartContext'
+import { addDoc, collection } from "firebase/firestore"
+
+import db from "../../db/db"
+import FormCheckOut from './FormCheckOut'
+import validateForm from '../../utils/validationYup.js'
+
 import "./checkOut.scss"
+
+
 
 const CheckOut = () => {
 
@@ -23,7 +31,7 @@ const handleChangeInput= (event) => {
   setDataForm({ ...dataForm, [event.target.name] : event.target.value })
 }
 
-const handleSubmit = (event) => {
+const handleSubmit = async (event) => {
   // le damos formato a la orden
   event.preventDefault()
   const order = {
@@ -32,7 +40,14 @@ const handleSubmit = (event) => {
     total: totalPrice()
   }
 
-  uploadOrder(order)
+  // validar los datos del formulario
+
+  const response = await validateForm(dataForm)
+  if (response.status === "success"){
+    uploadOrder(order)
+  } else{
+    toast(response.error)
+  }
 };
 
 const uploadOrder = async (order) =>{

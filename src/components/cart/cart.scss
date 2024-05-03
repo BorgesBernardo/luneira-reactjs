@@ -1,81 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
+
+*{
+  font-family: "Roboto Serif", serif;
+}
+
 .emptyCart{
-  text-align: center;
-  margin-top: 250px;
-  font-size: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 15.625rem;
+  font-size: 3.125rem;
   color: rgba(58, 58, 58, 0.285);
+  .buttonToHome{
+    text-decoration: none;
+    background-color: #e0cfc7;
+    width: 15rem;
+    font-size: 1.375rem;
+    text-align: center;
+    padding: .625rem;
+    border-radius: .625rem;
+    color: #626161;
+  }
 }
 
 .cartContainer{
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  margin: 30px 30px;
+  gap: 1.25rem;
+  margin: 1.875rem 1.875rem;
   h2{
-    font-size: 40px;
+    font-size: 2.5rem;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
   }
   .itemCardContainer{
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 2.5rem;
     .itemCard{
       display: flex;
       flex-direction: row;
-      box-shadow: 0px 0px 10px grey;
-      border-radius: 10px;
+      box-shadow: 0rem 0rem .625rem grey;
+      border-radius: .625rem;
       align-items: center;
-      gap: 20px;
-      font-size: 23px;
+      gap: 1.25rem;
+      font-size: 1.4375rem;
       font-weight: bold;
       span{
         font-weight: 400;
       }
       img{
-        width: 250px;
+        width: 15.625rem;
       }
       button{
-        padding: 20px;
+        padding: 1.25rem;
         background-color: #e0cfc7 ;
         border-color: transparent;
-        font-size: 15px;
-        border-radius: 10px;
-        cursor: pointer;
+        font-size: .9375rem;
+        border-radius: .625rem;
       }
-  }
+    }
   }
   .totalContainer{
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    font-size: 25px;
-    margin-top: 20px;
+    gap: 1.875rem;
+    font-size: 1.5625rem;
+    margin-top: 1.25rem;
     .containerButtonCart{
       display: flex;
       flex-direction: row;
-      gap: 20px;
+      gap: 1.25rem;
       button{
-        padding: 20px;
-        width: 200px;
+        padding: 1.25rem;
+        width: 12.5rem;
         background-color: transparent;
-        border: solid 2px #e0cfc7 ;
-        border-radius: 10px;
-        font-size: 20px;
+        border: solid .125rem #e0cfc7 ;
+        border-radius: .625rem;
+        font-size: 1.25rem;
         cursor: pointer;
       }
       .buy{
-        padding: 20px;
-        width: 260px;
+        padding: 1.25rem;
+        width: 20rem;
         background-color: #e0cfc7;
-        border-radius: 10px;
-        font-size: 20px;
+        border-radius: .625rem;
+        font-size: 1.25rem;
         text-decoration: none;
         list-style: none;
         color: #626161;
         font-weight: bold;
         cursor: pointer;
+        text-align: center;
       }
     }
-
   }
 }

@@ -6,6 +6,7 @@ import CountController from '../Count-Controller/CountController';
 import { CartContext } from '../../context/CartContext';
 import {doc, getDoc} from "firebase/firestore";
 import db from "../../db/db";
+import Swal from 'sweetalert2';
 
 const ItemDetail = ({}) => {
 
@@ -14,28 +15,30 @@ const ItemDetail = ({}) => {
   const { idProduct } = useParams()
 
   const getProducts = async() => {
-    const docRef = doc(db, "products", idProduct);
-    const dataDb = await getDoc (docRef)
-
-    const data = {id: dataDb.id, ...dataDb.data()}
-
-    setProduct(data)
+    try{
+      const docRef = doc(db, "products", idProduct);
+      const dataDb = await getDoc (docRef)
+  
+      const data = {id: dataDb.id, ...dataDb.data()}
+  
+      setProduct(data);
+    } catch (error) {
+      console.log("error")
+    }
   }
 
   const { cart, addToCart } = useContext(CartContext)
 
 
   const handleAddToCart = (contador) => {
-
     const productCart = {...product, quantity: contador} // este va a ser el producto que agregemos al carrito
     addToCart(productCart)
   }
 
   useEffect(() => {
-
     getProducts()
-
   },[idProduct])
+
 
   return (
 
