@@ -1,20 +1,32 @@
 .controlerContainer{
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  gap: 30px;
   .countContainer{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 20px;
     .operationButton{
-      padding: 18px 25px;
+      padding: 10px 20px;
+      background-color: transparent;
+      border: 2px solid #e0cfc7;
+      border-radius: 5px;
+      cursor: pointer;
     }
   }
   .cartButton{
-    padding: 15px 15px;
-    font-size: 18px;
+      text-decoration: none;
+      background-color: #e0cfc7;
+      padding: 20px;
+      width: 200px;
+      border-radius: 10px;
+      color: #626161;
+      font-weight: bold;
+      font-size: 18px;
+      border-color: transparent;
+      cursor: pointer;
   }
 
 }

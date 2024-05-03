@@ -7,8 +7,6 @@ import { CartContext } from '../../context/CartContext';
 import {doc, getDoc} from "firebase/firestore";
 import db from "../../db/db";
 
-
-
 const ItemDetail = ({}) => {
 
   const [product, setProduct] = useState({})
@@ -48,7 +46,7 @@ const ItemDetail = ({}) => {
       <div className='productItemDetail'>
         <h2> {product.name} </h2>
         <p> {product.description} </p>
-        <h3> {product.price} </h3>
+        <h3> $ {product.price} </h3>
         <CountController handleAddToCart={handleAddToCart} stock={product.stock}/>
       </div>
 

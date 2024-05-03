@@ -13,12 +13,12 @@ const CartWidget = () => {
 
   return (
 
-      <Link to ="/cart" className='cartWidgetContainer'>
+    <Link to ="/cart" className='cartWidgetContainer'>
 
-        <PiShoppingCartSimpleFill size={50}/>
-        <p> { quantity > 0 && quantity } </p>
+      <PiShoppingCartSimpleFill size={50}/>
+      <p className='number'> { quantity > 0 && quantity } </p>
         
-      </Link>
+    </Link>
   )
 }
 

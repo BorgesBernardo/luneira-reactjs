@@ -24,7 +24,7 @@ const CountController = ({handleAddToCart, stock}) => {
     <div className='controlerContainer'>
       <div className='countContainer'>
         <button onClick={handleSubtract} className='operationButton'> - </button>
-        <p> Cantidad:{contador} </p>
+        <p> Cantidad: {contador} </p>
         <button onClick={handleAdd} className='operationButton'> + </button>
       </div>
       <div>

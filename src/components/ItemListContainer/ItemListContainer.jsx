@@ -14,7 +14,7 @@ const ItemListContainer = ( {saludo} ) => {
   const { idCategory } = useParams();
 
   const getProducts = async () =>{
-
+    
     const dataDb = await getDocs(collection(db, "products"));
     
     const data = dataDb.docs.map( (productDb) => {
@@ -25,6 +25,7 @@ const ItemListContainer = ( {saludo} ) => {
   }
 
   const getProducstByCategory = async () =>{
+
     const q = query(collection(db, "products"), where("category", "==", idCategory));
     
     const dataDb = await getDocs(q);
@@ -37,7 +38,6 @@ const ItemListContainer = ( {saludo} ) => {
   }
 
 useEffect(() => {
-  
   if(idCategory){
     getProducstByCategory()
   }else {

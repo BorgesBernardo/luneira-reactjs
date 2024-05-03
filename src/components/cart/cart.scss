@@ -40,21 +40,42 @@
         border-color: transparent;
         font-size: 15px;
         border-radius: 10px;
+        cursor: pointer;
       }
   }
   }
   .totalContainer{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 30px;
     font-size: 25px;
-    button{
-      padding: 20px;
-      width: 200px;
-      background-color: transparent;
-      border: solid 2px #e0cfc7 ;
-      border-radius: 10px;
-      font-size: 20px;
+    margin-top: 20px;
+    .containerButtonCart{
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      button{
+        padding: 20px;
+        width: 200px;
+        background-color: transparent;
+        border: solid 2px #e0cfc7 ;
+        border-radius: 10px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+      .buy{
+        padding: 20px;
+        width: 260px;
+        background-color: #e0cfc7;
+        border-radius: 10px;
+        font-size: 20px;
+        text-decoration: none;
+        list-style: none;
+        color: #626161;
+        font-weight: bold;
+        cursor: pointer;
+      }
     }
+
   }
 }
